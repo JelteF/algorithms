@@ -18,7 +18,7 @@
 \maketitle
 
 \begin{enumerate}
-    \item opdraht 1
+    \item opdracht 1
         \begin{enumerate}
             \item
             \item
@@ -75,7 +75,22 @@
         \end{enumerate}
 
 
-    \item
+    \item 
+    Het divide and conquer algoritme dat we gebruiken rekent eerst de grootte van de maximale independant set uit en vergelijkt deze vervolgens met k.\\
+    buren(V) $\subseteq G$ is een deelverzameling van G bestaande uit de buren van een V(Vertices verbonden met V door Edges) en V zelf.
+    
+    func(G)\{\\
+    	\hspace{4ex} return $max(1 + func(G - buren(V_{random}), func(G - V_{random}));$\\
+    \}\\
+
+    int maxset = func(G);\\
+    if(maxset $>$= k)\\
+    	return True;\\
+    else\\
+    	return False;\\
+    
+    Dit algoritme heeft een complexiteit van $O(2^n)$
+    
 
 \end{enumerate}
 
