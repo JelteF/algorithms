@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\bigO}{\ensuremath{\mathcal{O}}}
+
+\title{\textbf{Algoritmen en Complexiteit HW 2}}
+\author{Jelte Fennema (10183159)\\
+		Jaap Koetsier (10440615)\\
+        Abe Wiersma (xxxxxxxxxx)}
+\date{14 februari 2014}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item opdraht 1
+        \begin{enumerate}
+            \item
+            \item
+            \item
+            \item
+        \end{enumerate}
+    \item
+        Allereerst berekent men het kortste pad tussen $s$ en $t$, dit wordt
+        gedaan met Dijkstra's algoritme. Daarna haalt men de eerste kant uit dat
+        pad uit de graaf. Men berekent opnieuw het kortste pad tussen $s$ en
+        $t$. De lengte van dit pad wordt bewaard. Dit herhaalt men voor alle
+        kanten uit het kortste pad tussen $s$ en $t$ (Dijkstra's). De kant waarbij het
+        langste pad is gevonden is de kant die weg gehaald moet worden.
+
+        De complexiteit van Dijkstra's algoritme is $$\bigO(|E| + |V|\log|V|).$$
+        Dit wordt initiëel gedaan. Daarna wordt nog $x$ aantal keer Dijkstra's
+        algoritme uitgevoerd dus weer met complexiteit
+        $$\bigO(|E| + |V|\log|V|).$$
+        Het initiële kortste pad kan maximaal $|V|-1$ zijn dus de complexiteit
+        is $$\bigO(|V||E| + |V|^2\log|V|)$$
+    \item
+        \begin{enumerate}
+            \item
+                De 3 voorwaardes voor een greedy algoritme zijn:
+
+                \begin{enumerate}[\bfseries 1.]
+
+                    \item Een optimale oplossing wordt stap voor stap opgebouwd.
+
+                    \item Een éénmaal genomen stap wordt nooit ongedaan gemaakt.
+
+                    \item In iedere stap wordt een zo groot of zo goed mogelijk
+                        tussenresultaat behaald.
+
+                \end{enumerate}
+
+                Deze worden allemaal behaald op deze manier:
+
+                \begin{enumerate}[\bfseries 1.]
+
+                    \item Er wordt stap voor stap gezocht gezocht naar een cykel
+                        tot die gevonden is en dan wordt de volgende gezocht.
+
+                    \item Er worden nooit kanten toegevoegd.
+
+                    \item Je haalt altijd de zwaarste kant uit de cykel,
+                        waardoor je de lichtste kanten over houdt in je
+                        (tussenvorm van de) boom.
+
+                \end{enumerate}
+
+            \item De complexiteit is hetzelfde als die van breadth first search,
+                dus $\bigO(|V|)$
+        \end{enumerate}
+
+
+    \item
+
+\end{enumerate}
+
+\end{document}
