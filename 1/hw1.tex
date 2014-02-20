@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\bigO}{\ensuremath{\mathcal{O}}}
+
+\title{\textbf{Algoritmen en Complexiteit HW 1}}
+\author{Jelte Fennema (10183159)\\
+		Jaap Koetsier (10440615)}
+\date{14 februari 2014}
+
+\begin{document}
+
+\maketitle
+
+\begin{description}
+    \item[1a] Het Heap's algoritme
+        (\url{http://en.wikipedia.org/wiki/Heap\%27s\_algorithm}) reproduceert
+            alle mogelijke permutaties van de betreffende lijst op een geordende
+            manier door recursief elementen van de lijst om te wisselen. De
+            permutaties staan niet in een geordende volgorde: hiervoor zou een
+            (aangepaste versie) van opgave 3 gebruikt kunnen worden
+            (lexicografische ordening). We hebben dit algoritme geïmplementeerd
+            in Python, zie de functie \texttt{perm} in de file \texttt{perm.py}.
+
+    \item[1b] De functie \texttt{perm\_recursief} wordt
+        $n + n(n-1) + n(n-1)(n-2) + \dotsb + n(n-1) * \dotsb 2 + n(n-1)* \dotsb
+        2 * 1$.
+        De laatste 2 termen versimpelen naar $n! $ wat de grootste termen zijn.
+        Het algoritme zit in dus de complexiteitsverzameling \bigO$(n!)$.
+
+    \item[1c] Om te bereiken dat de mde permutatie gevonden wordt kan er gewoon
+        een counter toegevoegd worden. Dit is geïmplementeerd met de functie
+        \texttt{search\_perm} in \texttt{perm.py}.
+
+    \item[1d] Aangezien er slechts één if-statement toegevoegd is aan het
+        oorspronkelijke algoritme is de complexiteit niet veranderd. Het
+        algoritme heeft nog steeds een complexiteit uit de verzameling
+        \bigO$(n!)$.
+        \\
+
+
+    \item[2a] Een matrixoptelling van twee matrices $n*n$. Dit wordt gedaan door
+        elk element uit de eerste matrix op te telen bij hetzelfde element in de
+        andere matrix. Hier zijn dus maximaal $n*n = n^2$ optellingen uit te
+        voeren.
+
+    \item[2b] Het sorteren van een lijst met bubble sort. Als de lijst al
+        gesorteerd is zal er alleen langs alle $n$ de elementen gelopen hoeven
+        te worden in $n$ tijd, dit is het absolute minimum.
+
+    \item[2c] Hetzelfde als bij $2a$. Een matrixoptelling van een $n*n$ matrix
+        heeft minimaal $n*n$ iteraties nodig om alle elementen van de matrices
+        op te tellen.
+
+    \item[2d] Een matrixvermenigvuldiging met matrixen van $n*n$. Als dit gedaan
+        wordt door elk element uit de eerste matrix maal de elementen uit de
+        desbetreffende kolom in de 2 matrix te doen. Dit zorgt voor $n^2*n = n^3$
+        operaties. Wanneer $n$ groter wordt zal de complexiteit ver onder de
+        $2^n$ blijven.
+
+    \item[2e] Inserten in een rood-zwart boom. Sneller dan $\log n$ wordt het
+        niet, maar langzamer ook niet door het gebalanceerde karakter van de
+        boom.
+
+    \item[2f] Quicksort. Deze zal nooit sneller zijn dan $n\log(n)$, zelfs als
+        de lijst al gesorteerd is zal deze er nog steeds $n\log(n)$ over doen.
+        \\
+
+
+    \item[3a] Recursief over de strings itereren. Beginnen bij de eerste
+        karakters van de string en deze op volgorde zetten en groeperen met
+        behulp van Quicksort. Hierna worden per groep de tweede karakters
+        vergeleken, etc etc.
+
+    \item[3b] $T(n) = kT(n/k) + \bigO(n\log(n))$
+
+    \item[3c] Het eerste deel van de recurrente betrekking zit in $\bigO(n)$ en
+        het tweede deel is van $\bigO(n\log(n))$, dus de bovengrens is uit
+        $\bigO(n\log(n))$.
+
+    \item[3d] Niets. De recurrente betrekking wordt $T(n) = \log(n)T(n/\log(n))
+        + \bigO(n\log(n))$. In plaats van de constante $k$ gebruiken we
+        $\log(n)$ symbolen. Dit verandert voor de recurrente betrekking niets.
+        Eerst gold $a = b = k$, nu wordt dit $a = b = \log(n)$, dus dan geldt
+        nog steeds dat het eerste gedeelte van de recurrente betrekking in
+        $\bigO(n)$ zit. Het tweede gedeelte verandert niet, dus het geheel
+        blijft uit $\bigO(n\log(n))$.
+        \\
+
+
+    \item[4] Ja, want als de functiewaarden van $f(n)$ kleiner zijn dan $g(n)$
+        is de genoemde breuk altijd kleiner dan 1, dus zit de breuk in
+        \bigO$(1)$
+
+
+\end{description}
+
+\end{document}
