@@ -18,12 +18,13 @@
 \maketitle
 
 \begin{enumerate}
-    \item opdracht 1
+    \item
         \begin{enumerate}
-            \item
-            \item
-            \item
-            \item
+            \item Zie graph.py.
+            \item Zie graph.py. De functie itereert recursief over alle mogelijke paden te beginnen bij de startnode. Nodes kunnen meerdere keren bezocht worden vanuit verschillende andere nodes. Dit is zeer inefficient, omdat je bepaalde paden vanuit verschillende bronnodes opnieuw blijft doorlopen. Alleen de knopen die al in het desbetreffende pad zitten worden overgeslagen. Dit resulteert in een worst-case complexiteit uit de verzameling van $\bigO(n!)$, omdat er na de eerste iteratie van $n$ mogelijke buren nog $n-1$, $n-2$, $n-3$ enz. mogelijke buren overblijven.
+            \item Zie graph.py. Dijkstra's algoritme is geïmplementeerd met een lineaire search om de unvisited node te vinden met de minimale afstand tot de source node. Dit kan sneller door gebruik te maken van een Fibonacci-heap of priority queue, maar zoals bij d. te zien is Dijkstra's algoritme op deze manier al beduidend sneller dan de recursieve manier om het kortste pad te vinden. Deze implementatie van Dijkstra's algoritme heeft een complexiteit uit de verzameling van $\bigO(n^2)$, omdat elke node maximaal één keer bezocht wordt, van waaruit elke andere node (buur) maximaal één keer bekeken wordt.
+            \item In de gebruikte graaf, waarbij de kans dat de ene node rechtstreeks verbonden is met elke andere node 50\% is, is de running time van Dijkstra's algoritme onmeetbaar op de systeemklok. Omdat Dijkstra's algoritme direct stopt wanneer de doelnode bereikt wordt, en de dichtheid van de graaf vrij groot is komt het algoritme heel snel op het resultaat. Het recursieve algoritme daarentegen doet er bij 15 nodes al 4.87 seconden over om het kortste pad te vinden. Bij 16 nodes wordt de wachttijd al veel te groot in relatie tot de probleemgrootte.\\
+            In een poging Dijkstra het toch moeilijk te maken hebben we de dichtheid van de graaf kleiner gemaakt. Bij een kans dat een bepaalde node verbonden is met een andere node van 10\% geeft Dijkstra ofwel aan dat er geen pad is, of hij geeft het resultaat terug in 0.000000 seconden.
         \end{enumerate}
     \item
         Allereerst berekent men het kortste pad tussen $s$ en $t$, dit wordt
