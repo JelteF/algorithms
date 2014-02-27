@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\bigO}{\ensuremath{\mathcal{O}}}
+
+\title{\textbf{Algoritmen en Complexiteit HW 3}}
+\author{Jelte Fennema (10183159)\\
+		Jaap Koetsier (10440615)\\
+        Abe Wiersma (10433120)}
+\date{14 februari 2014}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item
+
+    \item
+        Voor elke doos kijken we wat de maximale hoogte van de stapel is als
+        deze bovenop staat. Dit doen we voor alle stapelhoogtes. Dit wordt
+        gedaan door te kijken op welke van de stapels uit de vorige stapelhoogte
+        hij geplaatst kan worden. Hij kan op een stapel geplaatst worden waar de
+        doos nog niet in gebruikt is en de breedte en diepte van de bovenste
+        doos niet groter is als zijn eigen breedte en diepte. Van deze gevonden
+        stapels wordt de hoogste gekozen.
+
+        Past hij niet op een stapel, dan is de hoogte van die stapel 0. Past hij
+        wel op een stapel dan wordt zijn hoogte bij de hoogte van die stapel
+        opgeteld.
+
+        Aan het einde wordt gekeken welke van de stapels het hoogste is.
+
+        De stapelhoogte is maximaal $n$, waarbij voor elke stapelhoogte voor
+        alle $n$ dozen wordt gekeken op welke van de $n - 1$ lagere stapels hij
+        past. Dit algorithme heeft dus complexiteit \bigO$(n^3)$.
+
+    \item
+        \begin{enumerate}
+            \item
+                Een voorbeeld is een balk van lengte 8 waar bij de sneden op
+                posites 3, 4 en 5 gemaakt moeten worden.
+
+                De door het algoritme gekozen volgorde zou zijn: $4, 3, 5$ of
+                $4, 5, 3$. Dit komt uit op kosten van $8+4+4=16$. Terwijl het
+                goedkoper zou zijn om in volgorde $3, 5, 4$ te zagen. Dit geeft
+                de kosten $8+5+2=15$
+
+            \item
+        \end{enumerate}
+
+    \item
+        \begin{enumerate}
+            \item
+            \item
+        \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
