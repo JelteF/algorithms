@@ -20,7 +20,38 @@
 \maketitle
 
 \begin{enumerate}
-    \item
+    \item We beginnen met een lege tabel met op de horizontale kant de cijfers $0, 2, ..., m$,
+    	waarbij $m$ de lengte van string $X$ is. Op de verticale kant zetten we de cijfers
+    	$0, 1, 2, ..., n$, met n de lengte van string $Y$. We beginnen links bovenin, en kijken
+    	naar de het vakje rechts (positie $1$ van string $X$, $0$ van string $Y$), en we kijken
+    	of in string $X$ op positie $1$ hetzelfde karakter staat als in onze string $Z$ op
+    	positie $1$ (we zitten in vakje $0, 1 => 0 + 1 = 1$). Wanneer dit het geval is zetten we
+    	$1$ in het vakje, de lengte van onze gecontroleerde string op dit moment. Wanneer de
+    	karakters niet overeen komen zetten we hier een $x$ in het vakje en kijken
+    	we naar het vakje onder het huidige vakje ($1,0$) en vergelijken we het eerste karakter
+    	van string $Y$. Vanuit een ingevuld vakje kijken we alleen naar de volgende rij of kolom,
+    	nooit terug. De huidige posities in de strings $X$ en $Y$ zijn af te lezen in de boven-
+    	en zijkant van de tabel, de som van deze is de te vergelijken positie in $Z$. Wanneer
+    	we aangekomen zijn in $n, m$ (en op het laatste karakter van string $Z$) hebben we
+    	een match. Wanneer we ergens stranden op een vakje waarbij we zowel rechts als onder
+    	geen match hebben is het algoritme klaar en hebben we geen match.\\
+    	Het voorbeeld uit de opgave geeft de volgende tabel:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllllllllll}
+\hline
+           & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
+\textbf{0} & 0          & 1          & x          &            &            &            &            &            &            &            \\
+\textbf{1} & 1          & 2          & 3          & 4          & 5          & 6          & x          &            &            &            \\
+\textbf{2} & x          & 3          &            &            &            & 7          & x          &            &            &            \\
+\textbf{3} &            &            &            &            &            & 8          & 9          & 10         & x          &            \\
+\textbf{4} &            &            &            &            &            & x          &            & 11         & 12         & 13         \\
+\textbf{5} &            &            &            &            &            &            &            & x &            & 14         \\ \hline
+\end{tabular}
+\end{table}
+
+
 
     \item
         Voor elke doos kijken we wat de maximale hoogte van de stapel is als
@@ -53,6 +84,12 @@
                 de kosten $8+5+2=15$
 
             \item
+                Voor 1 tot uiteindelijk aantal snedes kijken we wat de
+                laagst mogelijke toevoeging aan de prijs. Dit doen we door te
+                kijken naar de vorige kolom van de matrix naar alle rijen
+                behalve zijn eigen. Hieruit kiest het algoritme de
+                deelverzameling waarbij zijn snede de minste toevoeging geeft
+                aan het totaal.
         \end{enumerate}
 
     \item
