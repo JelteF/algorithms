@@ -5,6 +5,7 @@
 \usepackage{enumerate}
 \usepackage[utf8]{inputenc}
 \usepackage{qtree}
+\usepackage{float}
 
 
 \newcommand{\bigO}{\ensuremath{\mathcal{O}}}
@@ -35,21 +36,23 @@
     	we aangekomen zijn in $n, m$ (en op het laatste karakter van string $Z$) hebben we
     	een match. Wanneer we ergens stranden op een vakje waarbij we zowel rechts als onder
     	geen match hebben is het algoritme klaar en hebben we geen match.\\
+    	Het algoritme is uit de complexiteitsverzameling \bigO($n$), omdat er lineair door de
+    	strings gelopen wordt, alles moet immers vergeleken worden.\\\\
     	Het voorbeeld uit de opgave geeft de volgende tabel:
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{lllllllllll}
+		\hline
+				   & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
+		\textbf{0} & 0          & 1          & x          &            &            &            &            &            &            &            \\
+		\textbf{1} & 1          & 2          & 3          & 4          & 5          & 6          & x          &            &            &            \\
+		\textbf{2} & x          & 3          &            &            &            & 7          & x          &            &            &            \\
+		\textbf{3} &            &            &            &            &            & 8          & 9          & 10         & x          &            \\
+		\textbf{4} &            &            &            &            &            & x          &            & 11         & 12         & 13         \\
+		\textbf{5} &            &            &            &            &            &            &            & x &            & 14         \\ \hline
+		\end{tabular}
+		\end{table}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{lllllllllll}
-\hline
-           & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
-\textbf{0} & 0          & 1          & x          &            &            &            &            &            &            &            \\
-\textbf{1} & 1          & 2          & 3          & 4          & 5          & 6          & x          &            &            &            \\
-\textbf{2} & x          & 3          &            &            &            & 7          & x          &            &            &            \\
-\textbf{3} &            &            &            &            &            & 8          & 9          & 10         & x          &            \\
-\textbf{4} &            &            &            &            &            & x          &            & 11         & 12         & 13         \\
-\textbf{5} &            &            &            &            &            &            &            & x &            & 14         \\ \hline
-\end{tabular}
-\end{table}
 
 
 
@@ -93,7 +96,7 @@
                 deelverzameling waarbij zijn eigen snede en de prijs van de vorige snedes zo laag mogelijk zijn. Een voorbeeld met een
                 balk van lengte 12, met snedes [2, 5, 8] is:
 
-                \begin{table}[h]
+                \begin{table}[H]
                 \centering
                     \begin{tabular}{l|lll}
                     ~ & 1  & 2  & 3  \\ \hline
@@ -102,7 +105,7 @@
                     8 & 12 & 19 & 24 \\
                     \end{tabular}
                 \end{table}
-                \begin{table}[h]
+                \begin{table}[H]
                 \centering
                     \begin{tabular}{l|lll}
                     ~ & 1 & 2    & 3        \\ \hline
@@ -113,7 +116,7 @@
                 \end{table}
 
                 Alle verzamelingen hebben al snede vijf aan het einde van 5,
-                dus wordt die uitgezet.
+                dus wordt die uitgezet. Het algoritme heeft een complexiteit van \bigO($n^3$).
         \end{enumerate}
 
     \item
