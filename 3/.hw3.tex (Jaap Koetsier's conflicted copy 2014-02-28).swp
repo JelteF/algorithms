@@ -102,7 +102,7 @@
                     8 & 12 & 19 & 24 \\
                     \end{tabular}
                 \end{table}
-                \begin{table}[h]
+                \begin{table}
                 \centering
                     \begin{tabular}{l|lll}
                     ~ & 1 & 2    & 3        \\ \hline
