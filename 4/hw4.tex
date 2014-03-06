@@ -6,6 +6,7 @@
 \usepackage{tikz}
 \usepackage{verbatim}
 \usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
 \newcommand{\bigO}{\ensuremath{\mathcal{O}}}
 
 \title{\textbf{Algoritmen en Complexiteit HW 4}}
@@ -161,27 +162,38 @@
                 \end{tikzpicture}
                 \\
 
+                De maximale stroom is dus 8, want dat gaat s uit en gaat t in.
+
             \item
                 Het gelaagde netwerk:\\
+                \def\layersep{2.5cm}
                 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
                                     thick,main node/.style={circle,draw,font=\Large}]
                     \node[main node] (S) {s};
-                    \node[main node] (1) [above right of=S] {1};
-                    \node[main node] (2) [right of=S] {2};
-                    \node[main node] (3) [below right of=S] {3};
-                    \node[main node] (4) [right of=2] {4}
-                    \node[main node] (T) [right of=3] {t}
+                    \node[main node] (1) at (\layersep, 2cm) {1};
+                    \node[main node] (2) at (\layersep, 0cm) {2};
+                    \node[main node] (3) at (\layersep, -2cm) {3};
+                    \node[main node] (4) at (5cm, 0cm) {4};
+                    \node[main node] (T) at (5cm, -2cm) {T};
                     \path[every node/.style={font=\small}]
                         (S)
                         edge node {2} (1)
                         edge node {3} (3)
-                        edge node {5} (5)
-                        ()
+                        edge node {5} (2)
+
+                        (2)
+                        edge node {3} (4)
+
+                        (3)
+                        edge node {5} (T)
                         ;
                 \end{tikzpicture}
 
 
             \item
+                Links is s, 1, 2, 3 en rechts 4, t. De minimale capaciteit van
+                de die cut is dan 8, dit is hetzelfde als de maximale flow die
+                gevonden is in 1c.
 
         \end{enumerate}
 
