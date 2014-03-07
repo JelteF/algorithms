@@ -219,7 +219,8 @@
 
         \end{enumerate}
 
-    \item
+    \item Verdeel de rij $(x - x_0)(x - x_1)(x - x_2) ... (x - x_{n-1})$ in twee rijen van lengte $n/2$. Splits de ontstane rijen weer op en herhaal dit totdat er paren over zijn van twee haakjesparen. Laten we de eerste paren $a$ en $b$ noemen. Vermenigvuldig deze paren $a$ en $b$ tot één nieuw haakjespaar $ab$ met drie termen. Vermenigvuldig dit paar met het paar $cd$ dat ontstaan is door de vermenigvuldiging van $c$ en $d$. Herhaal dit totdat alles met elkaar vermenigvuldigd is: dit is de polynoom die voor alle gegeven waarden $x$ $0$ als functiewaarde heeft.\\
+    Vergeleken met een algoritme waarbij we elk haakjes paar apart met de hele rij vermenigvuldigen wordt ons algoritme exponentieel sneller naarmate $n$ groter wordt. Bij een zevende-graads polynoom zijn we met ons algoritme $59$ vermenigvuldigingen kwijt, in tegenstelling tot $70$ bij het recursieve algoritme. Bij een polynoom van dubbele lengte (vijftiende-graads) wordt ons algoritme slechts $59 + 59 + 8*8 = 199$ vermenigvuldigingen. Het recursieve algoritme heeft daar $270$ vermenigvuldigingen voor nodig.
 
 \end{enumerate}
 
