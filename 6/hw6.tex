@@ -29,7 +29,7 @@
         $$(\neg x_1 \vee \neg x_1 \vee \neg x_4) \wedge (x_1 \vee x_1 \vee x_5) \wedge (x_2 \vee x_2 \vee x_2) \wedge (x_3 \vee x_3 \vee x_5)$$
     \item
         \begin{enumerate}
-            \item 
+            \item
             \item
             \item
             \item
@@ -44,9 +44,23 @@
                 \end{enumerate}
             \item
                 \begin{enumerate}[a]
-                    \item Als we een groep van $K$ personen gevonden hebben maken we een lijst van de verenigingen waarvan de personen lid zijn. Als alle verenigingen in de lijst hoogstens \'{e}\'{e}n keer voorkomen hebben we een oplossing voor ons probleem.
-                    \item We maken een graaf met als knopen personen en verenigingen. Iedere persoon is met kanten verbonden aan de verenigingen waar deze lid van is. Subverenigingen en verenigingen zijn hetzelfde verbonden. 
+                    \item Als we een groep van $K$ personen gevonden hebben
+                        maken we een lijst van de verenigingen waarvan de
+                        personen lid zijn. Als alle verenigingen in de lijst
+                        hoogstens één keer voorkomen hebben we een
+                        oplossing voor ons probleem.
+
+                    \item We maken een graaf $G$ met als knopen personen en
+                        verenigingen. Iedere persoon is met kanten verbonden aan
+                        de verenigingen waar deze lid van is. Subverenigingen en
+                        verenigingen zijn hetzelfde verbonden.
+                        Men zoekt een 2 leden waar een pad tussen is en haalt
+                        het eerste lid uit de set. Het probleem wordt dan dus
+                        gereduceerd van $(G, K)$ tot $(G - \{l\}, K)$.
+
                     \item
+
+
                 \end{enumerate}
             \item
                 \begin{enumerate}[a]
@@ -60,7 +74,7 @@
                     \item
                     \item
                 \end{enumerate}
-            
+
         \end{enumerate}
 \end{enumerate}
 
