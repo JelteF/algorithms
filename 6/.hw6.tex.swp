@@ -36,10 +36,31 @@
         \end{enumerate}
     \item
         \begin{enumerate}
-            \item 
             \item
+                \begin{enumerate}[a]
+                    \item Als er twee routes gevonden zijn voor beide chauffeurs is eenvoudig te controleren of deze inderdaad korter zijn dan $K_1$ en $K_2$ door de route langs te lopen en de afstanden tussen alle punten van de routes bij elkaar op te tellen.
+                    \item We gaan $K_1$ en $K_2$ apart langs. We halen steeds \'{e}\'{e}n kant weg en trekken de desbetreffende waarde van $K$ af. We gaan door totdat er nog slechts \'{e}\'{e}n kant (twee knopen) overblijft. Als de overgebleven kant kleiner is dan de $K$ behorende bij dit pad, en dit geldt voor zowel $K_1$ als $K_2$, hebben we inderdaad een oplossing voor ons probleem.
+                    \item Dit probleem is om te vormen in het travelling salesman problem. Als we een route gevonden hebben in de vorm van het TSP kunnen we de route die kleiner is dan $K_{1+2}$ daarna in twee\"{e}n delen zodat $K_1$ en $K_2$ aan de voorwaarden voldoen.
+                \end{enumerate}
             \item
+                \begin{enumerate}[a]
+                    \item Als we een groep van $K$ personen gevonden hebben maken we een lijst van de verenigingen waarvan de personen lid zijn. Als alle verenigingen in de lijst hoogstens \'{e}\'{e}n keer voorkomen hebben we een oplossing voor ons probleem.
+                    \item We maken een graaf met als knopen personen en verenigingen. Iedere persoon is met kanten verbonden aan de verenigingen waar deze lid van is. Subverenigingen en verenigingen zijn hetzelfde verbonden. 
+                    \item
+                \end{enumerate}
             \item
+                \begin{enumerate}[a]
+                    \item
+                    \item
+                    \item
+                \end{enumerate}
+            \item
+                \begin{enumerate}[a]
+                    \item
+                    \item
+                    \item
+                \end{enumerate}
+            
         \end{enumerate}
 \end{enumerate}
 
