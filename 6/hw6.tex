@@ -30,13 +30,38 @@
     \item
         \begin{enumerate}
             \item
-                $k = 3$\\
-                $n = 1$\\
-                $$f = x_{1,1} \wedge x_{1,2} \wedge x_{1,3}$$
+                Een formule om dit probleem op te lossen is $k * n$ termen te
+                nemen van alle variabelen met een $\land$ tussen die variabelen
+                en een $\lor$ tussen de termen. In die termen negativeer je alle
+                mogelijke combinaties van $k * (n-1)$ variabelen. Op die manier
+                wordt er gekeken of er een combinatie van $k$ variabelen is die
+                true zijn, terwijl de rest van de variablen false zijn.
+
             \item
-                $$(v_1 \lor w_1) \and ... (v_k \lor w_k)$$
+                $$(v_1 \lor w_1) \land (v_2 \lor w_2) \land ... \land (v_k \lor w_k)$$
+
             \item
+                Dit wordt vrij makkelijk gedaan door de eerste formule aan te
+                passen en die te combineren met de tweede formule door middel
+                van een $\land$.
+
+                Er moeten 2 dingen aangepast worden. Allereerst is er geen $n$
+                in deze vergelijking. Alleen een verzameling variabelen, in dit
+                geval knopen, van groote $|V|$. Hier moeten ook weer termen van
+                gemaakt worden van alle combinaties negaties, alleen in dit
+                geval negativeer je $|V| - k$ van de variabelen.
+
+                Verder moet nog aangepast worden dat waardes lager dan $k$ ook
+                geaccepteerd worden. Dit kan simpelweg bereikt worden door de
+                niet genegativeerde variabelen te verwijderen uit de termen.
+                Op die manier wordt er alleen gecheckt dat er niet een combinate
+                ware variabelen bestaat die groter is dan $k$.
+
             \item
+                De reductie van VERTEX COVER naar SATISFIABILITY bewijst dat
+                SATISFIABILITY minstens net zo moeilijk is als VERTEX COVER. In
+                dit geval dus ook NP-volledig.
+
         \end{enumerate}
     \item
         \begin{enumerate}
