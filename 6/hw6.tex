@@ -59,14 +59,35 @@
                         gereduceerd van $(G, K)$ tot $(G - \{l\}, K)$.
 
                     \item
-
+                        Het VERTEX COVER probleem is te reduceren tot een UNIONS
+                        probleem door alle knopen als mensen te zien en alle
+                        kanten als verenigingen. De mensen zitten dan in de
+                        verenigingen van de edges waar ze niet aan vast liggen.
 
                 \end{enumerate}
             \item
                 \begin{enumerate}[a]
                     \item
+                        Het certificaat is een set $V'$. Dit is dan te
+                        controleren door alle knopen in $V'$ uit de set te
+                        halen en dan te kijken of er nog cykels in de $G - V'$
+                        zitten.
+
                     \item
+                        Vind een cykel $C$ in $G$. Het probleem is dan te
+                        reduceren voor elke knoop $v_{1...n}$ in $C$ dit $(G -
+                        \{v\}, K - 1)$ te testen, als daar 1 van waar is dan is
+                        het originele probleem ook op te lossen. Het
+                        uiteindelijke gereduceerde probleem is dus $(G -
+                        \{v_1\}, K - 1) \lor ... \lor (G - \{v_n\}, K - 1)$
+
                     \item
+                        Het VERTEX COVER probleem is te reduceren tot een
+                        FEEDBACK VERTEX SET probleem door $G$ uit te bereiden
+                        met een knoop voor elke kant. Dan moeten er kanten
+                        worden getrokken van de knopen voor de kanten naar de
+                        knopen waar die kant mee verbonden is.
+
                 \end{enumerate}
             \item
                 \begin{enumerate}[a]
